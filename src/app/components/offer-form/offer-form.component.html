@@ -1,0 +1,86 @@
+<form [formGroup]="form" (ngSubmit)="onSubmitForm()">
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      formControlName="name"
+      [(ngModel)]="offer.name">
+    <label for="name">Titre de l'annocne</label>
+    <app-errors-form
+      [control]="form.controls.name"
+      controlLabel="'titre de l'annonce'"
+    ></app-errors-form>
+
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="description"
+      name="description"
+      formControlName="description"
+      [(ngModel)]="offer.description">
+    <label for="name">Description de l'annonce</label>
+    <app-errors-form
+      [control]="form.controls.description"
+      controlLabel="'Description de l'annonce'"
+    ></app-errors-form>
+
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="date"
+      class="form-control"
+      id="dateBegin"
+      name="dateBegin"
+      formControlName="dateBegin"
+      [(ngModel)]="offer.dateBegin">
+    <label for="name">Date de début</label>
+    <app-errors-form
+      [control]="form.controls.dateBegin"
+      controlLabel="'Date de début'"
+    ></app-errors-form>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="date"
+      class="form-control"
+      id="dateEnd"
+      name="dateEnd"
+      formControlName="dateEnd"
+      [(ngModel)]="offer.dateEnd">
+    <label for="name">Date de fin</label>
+    <app-errors-form
+      [control]="form.controls.dateEnd"
+      controlLabel="'Date de fin'"
+    ></app-errors-form>
+
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="imgUrl"
+      name="imgUrl"
+      formControlName="imgUrl"
+      [(ngModel)]="offer.imgUrl">
+    <label for="name">Image</label>
+    <app-errors-form
+      [control]="form.controls.imgUrl"
+      controlLabel="'Image'"
+    ></app-errors-form>
+
+  </div>
+  <div class="row col-6 mx-auto">
+    <button
+      [disabled]="form.invalid"
+      type="submit"
+      class="btn btn-dark btn-lg btn-block">
+      {{submitLabel}}
+      <a routerLink="/offers"
+         class="btn btn-outline-dark my-2"></a>
+    </button>
+  </div>
+</form>

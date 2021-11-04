@@ -1,0 +1,45 @@
+<div class="row mt-5">
+
+  <div class="col-6 card shadow mx-auto p-3">
+
+    <h3 class="text-center">CONNEXION</h3>
+
+    <form #loginForm="ngForm"(ngSubmit)="onSubmitLoginForm">
+
+      <div class="mb-3">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          class="form-control"
+          #emailControl
+          placeholder="Email"
+          [(ngModel)]="email"
+          required
+          email>
+      </div>
+
+      <div class="mb-3">
+        <label for="password">Mot de passe</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="Mot de passe"
+          #passwordControl
+          [(ngModel)]="password"
+          required>
+      </div>
+
+      <div class="row col-4 mx-auto">
+        <button
+          type="submit"
+          class="btn btn-dark btn-lg"
+          [disabled]="loginForm.invalid">
+          ME CONNECTER
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
